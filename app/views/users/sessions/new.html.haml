@@ -1,0 +1,12 @@
+.mt-5.w-500p
+  .bg-white.border.rounded-3.mt-3.p-3
+    %p.fs-2.text-center ログイン
+    .c-red.text-center.mb-3
+      = alert
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f|
+      = f.input :username, label_html: { class: 'fs-5 lh-base' }
+      = f.input :password, required: true, label_html: { class: 'fs-5 lh-base mt-3' }
+      .text-center
+        = f.button :submit, 'ログイン', class: 'btn btn-primary c-white mt-4'
+      .text-center.mt-3
+        = render 'users/shared/links'

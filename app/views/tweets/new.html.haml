@@ -1,0 +1,9 @@
+.mt-5.w-500p
+  .mb-1
+    = link_to 'ホーム', root_path, class: 'btn btn-primary c-white'
+
+  .bg-white.border.rounded-3.p-3
+    = simple_form_for @tweet do |f|
+      = f.input :content, as: :text, placeholder: 'いまどうしてる？', label: false, input_html: { class: 'h-250p' }
+      .text-center.mt-4
+        = f.button :submit, 'ツイート', class: 'btn btn-primary c-white'

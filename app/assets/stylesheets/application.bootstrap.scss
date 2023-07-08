@@ -1,0 +1,15 @@
+@import "custom";
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+@import "logo";
+@import "utilities";
+
+abbr[title] {
+  background-color: $red-600;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.5px 5px;
+  text-decoration: none;
+  vertical-align: middle;
+}

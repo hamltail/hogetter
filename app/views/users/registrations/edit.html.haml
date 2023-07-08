@@ -1,0 +1,19 @@
+.mt-5.w-500p
+  .mb-1
+    = link_to 'ホーム', root_path, class: 'btn btn-primary c-white'
+
+  .bg-white.border.rounded-3.p-3.mb-3
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: { turbo: false }) do |f|
+      = f.input :username, label_html: { class: 'fs-5 lh-base mt-3' }
+      = f.input :email, label_html: { class: 'fs-5 lh-base mt-3' }
+      = f.input :password, label_html: { class: 'fs-5 lh-base mt-3' }
+      - if @minimum_password_length
+        %small.c-gray
+          = @minimum_password_length
+          文字以上で設定してください
+      = f.input :password_confirmation, label_html: { class: 'fs-5 lh-base mt-3' }
+      = f.input :current_password, required: true, label_html: { class: 'fs-5 lh-base mt-3' }
+      = f.input :profile, as: :text, label_html: { class: 'fs-5 lh-base mt-3' }
+      = f.input :url, as: :url, label_html: { class: 'fs-5 lh-base mt-3' }
+      .text-center.mt-4
+        = f.button :submit, 'プロフィール更新', class: 'btn btn-primary c-white'

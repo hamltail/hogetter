@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      tweet:
+        content: 内容
+
+  simple_form:
+    "yes": 'はい'
+    "no": 'いいえ'
+    required:
+      text: '必須'
+      mark: '必須'
+    error_notification:
+      default_message: "エラーメッセージをご確認ください。"

@@ -1,0 +1,13 @@
+.mt-5.w-500p
+  .mb-1
+    = link_to 'ホーム', root_path, class: 'btn btn-primary c-white'
+
+  .bg-white.border.rounded-3.c-darkgray.p-3
+    %strong.fs-5
+      = @tweet.username
+    .fs-2.lh-base.mt-2
+      = simple_format h(@tweet.content)
+    .fs-6.c-gray
+      = l(@tweet.updated_at, format: :long)
+    .text-center.mt-1
+      = link_to 'プロフィール', profile_path(@tweet.user), class: 'btn btn-primary c-white'

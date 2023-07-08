@@ -1,0 +1,19 @@
+.mt-5.w-500p
+  .d-flex.flex-row-reverse
+    - if user_signed_in?
+      = link_to '＋', new_tweet_path, class: 'btn btn-primary c-white fs-2 rounded-30p p-fixed m-2'
+
+  - @tweets.each do |tweet|
+    = link_to(tweet_path(tweet), class: 'text-decoration-none') do
+      .bg-white.border.rounded-3.c-darkgray.lh-base.mb-1.p-3
+        .row.mb-1
+          .col-md-7
+            %strong
+              = tweet.username
+          .col-md-5.text-end.c-gray
+            %small
+              = l(tweet.updated_at, format: :long)
+        .row
+          .col-md-12
+            .fs-5
+              = simple_format h(tweet.content)

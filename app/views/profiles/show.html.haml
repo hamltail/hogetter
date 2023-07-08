@@ -1,0 +1,14 @@
+.mt-5.w-500p
+  .mb-1
+    = link_to 'ホーム', root_path, class: 'btn btn-primary c-white'
+
+  .bg-white.border.rounded-3.c-darkgray.lh-base.mb-1.p-3
+    %p.fs-2
+      = @user.username
+    .fs-3.lh-base
+      = simple_format h(@user.profile)
+    .fs-6
+      = link_to @user.url, @user.url, target: :_blank, rel: 'noopener noreferrer'
+    .text-center.mt-4
+      - if user_signed_in? && @user.id === current_user.id
+        = link_to '編集', edit_user_registration_path, class: 'btn btn-primary c-white'
